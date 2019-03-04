@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./watch.js"></script>
+  <script src="./watch-test.js"></script>
+  <script>
+    var ex1 = {
+      attr1: [1, 2, 3],
+      attr2: 2
+    };
+
+    var ex2 = {
+      attr1: [1, 2, 3],
+      attr2: 2
+    };
+
+    ex1.watch('attr1', function(){
+      console.log("ex1 changes!");
+    });
+    ex1.attr1.push(4)
+
+    ex2.onWatch('attr1', function(){
+      console.log("ex2 changes!");
+    });
+    ex2.attr1.push(4)
+  </script>
+</body>
+</html>
